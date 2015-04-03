@@ -413,7 +413,7 @@ describe('treeControl', function() {
 
         it('should be able to disable deselection of nodes', function () {
             $rootScope.treedata = createSubTree(2, 2);
-            $rootScope.treeOptions = {canDeselect: false};
+            $rootScope.treeOptions = {allowDeselect: false};
             element = $compile('<treecontrol selected-node="selected" tree-model="treedata" options="treeOptions">{{node.label}}</treecontrol>')($rootScope);
             $rootScope.$digest();`
 

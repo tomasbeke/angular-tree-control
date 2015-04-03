@@ -184,7 +184,7 @@
                                     $scope.selectedNode = selectedNode;
                                     selected = true;
                                 }
-                                else if ($scope.options.canDeselect) {
+                                else if ($scope.options.allowDeselect) {
                                     $scope.selectedNode = undefined;
                                 }
                             }
