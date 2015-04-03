@@ -411,6 +411,21 @@ describe('treeControl', function() {
             expect(element.find('.tree-selected').length).toBe(1);
         });
 
+        it('should be able to disable deselection of nodes', function () {
+            $rootScope.treedata = createSubTree(2, 2);
+            $rootScope.treeOptions = {canDeselect: false};
+            element = $compile('<treecontrol selected-node="selected" tree-model="treedata" options="treeOptions">{{node.label}}</treecontrol>')($rootScope);
+            $rootScope.$digest();`
+
+            element.find('li:eq(0) div').click();
+            expect(element.find('li:eq(0) div').hasClass('tree-selected')).toBeTruthy();
+            expect($rootScope.selected).toBeDefined();
+
+            element.find('li:eq(0) div').click();
+            expect(element.find('li:eq(0) div').hasClass('tree-selected')).toBeTruthy();
+            expect($rootScope.selected).toBeDefined();
+        });
+
         it('should be able to accept alternative equality function', function () {
             $rootScope.treedata = createSubTree(2, 2);
             $rootScope.treedata[0].id = 'id0';

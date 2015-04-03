@@ -79,7 +79,7 @@
                     ensureDefault($scope.options, "multiSelection", false);
                     ensureDefault($scope.options, "nodeChildren", "children");
                     ensureDefault($scope.options, "dirSelectable", "true");
-                    ensureDefault($scope.options, "canUnselect", "true");
+                    ensureDefault($scope.options, "canDeselect", "true");
                     ensureDefault($scope.options, "injectClasses", {});
                     ensureDefault($scope.options.injectClasses, "ul", "");
                     ensureDefault($scope.options.injectClasses, "li", "");
@@ -184,7 +184,7 @@
                                     $scope.selectedNode = selectedNode;
                                     selected = true;
                                 }
-                                else if ($scope.options.canUnselect) {
+                                else if ($scope.options.canDeselect) {
                                     $scope.selectedNode = undefined;
                                 }
                             }
